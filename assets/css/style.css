@@ -1,0 +1,146 @@
+#container{
+    margin: 0 auto;
+    width: 40%;
+    height: auto;
+    background-color:rgb(242, 242, 246);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+h2{
+    padding-top: 10px;
+    color: rgb(169, 187, 223);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#hor-border{
+    border-top: 0.9px solid rgb(193, 193, 239);
+    border-left: 100px;
+}
+
+#category-dueDate{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+
+
+#task-container, #category,#duDate{
+    display: flex;
+    flex-direction: column;
+    color:rgb(183, 183, 188);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: small;
+
+}
+
+#task-container input{
+    width: 97%;
+    height: 2rem;
+    border: 0;
+    background-color:rgb(242, 242, 246);
+    padding-left: 2%;
+    outline: none;
+}
+#selector{
+    width: 17em;
+    height: 2rem;
+    background-color:rgb(242, 242, 246);
+    padding-left: 2% ;
+    color: rgb(95, 95, 98);
+    outline: 0;
+    border: 0;
+    
+}
+
+#horizontal{
+  background-color: rgb(193, 193, 239);
+  height: 3rem;
+  float: left;
+  width: 1px;
+}
+
+
+#duDate input{
+    min-width: 200px;
+    /* min-height: 1; */
+    width: 17em;
+    height: 2rem;
+    padding-right: 2%;
+    color: rgb(95, 95, 98);
+    background-color:rgb(242, 242, 246);
+    outline: none;
+    border: 0;
+}
+
+
+
+#space{
+    margin-top: 25px;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+}
+#submitButton, #del-btn{
+    padding: 2%;
+    margin: 2px;
+    background-color: rgb(15, 15, 160);
+    border: 0;
+    color: #fff;
+}
+
+#del-btn{
+    background-color: red;
+    padding: 2%;
+}
+
+.tlist-div{
+    position: relative;
+    top: -5px;
+}
+
+#desc{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(95, 95, 98);
+
+}
+.list-category{
+    position: relative;
+    left: -10px;
+    top: 2px;
+    transition: all ease-in-out 0.5s;
+    float: right;
+    width: 75px;
+    text-align: center;
+    background-color: #924a99;
+    border-radius: 3px;
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.list-category:hover{
+    background-color: cadetblue;
+}
+
+@media screen and (max-width: 950px) {
+    #category-dueDate{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .xyz{
+        display: none;
+    }
+   
+}
+
+.printed-date{
+    margin: 22px;
+    font-size: small;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}

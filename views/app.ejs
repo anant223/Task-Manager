@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+</head>
+<body>
+  <div id="container">
+    <h2 style="text-align: center;"> <i class="fa-solid fa-list-check"></i> To-Do List</h2>
+    <form>
+          <div id="hor-border"></div>
+          <div id="task-container">
+            <span class="container-heading"> &nbsp; DESCRIPTION</span>
+            <input type="text" name="desc" placeholder="Make your schedule">
+          </div>
+          <!-- horizontal line -->
+          <div id="hor-border"></div>
+          
+          <div id="category-dueDate">
+            <div id="category">
+                <span class="container-heading">&nbsp; CATEGORY</span>
+                  <select name="category" id="selector">
+                      <option value="Choose Your Option" disabled>Choose Your Option</option>
+                      <option value="Personal">Personal</option>
+                      <option value="School/College">College</option>
+                      <option value="Work">Work</option>
+                      <option value="Cleaning">Cleaning</option>
+                      <option value="Others">Others</option>
+                  </select>
+            </div>
+          <div id="horizontal" class="xyz"></div>
+          <div id="duDate">
+          <span class="container-heading">&nbsp; DUE DATE</span>
+          <input id="date-input" type="date" name="date" id="dateInputBox">
+          </div>
+        </div>
+        
+        <div id="hor-border"></div>
+          <div id="space"></div>
+          <div class="btn">
+            <button id="submitButton" type="submit" formaction="/create" formmethod= 'POST' ><i class="fa fa-plus-square"></i> &nbsp;&nbsp;Add Task</button>
+            <button id="del-btn" type="submit" formaction="/delete" formmethod="get"><i class="fas fa-trash"></i>&nbsp;&nbsp; Delete Tasks</button>
+          </div>
+          <div id="space"></div>
+          <div id="hor-border"></div>
+          <!-- Create tasks area -->
+          <div class="tlist-div">
+            
+            <ul>
+              <!-- fetching data by foreach loop -->
+              <% Tasks.forEach(function(item){ %>
+
+                <li style="list-style-type:none;">
+                  <span id="checkbox-container">
+                    <input type="checkbox" name="<%= item.id %>" id="chekbox">
+                  </span>
+                  <span id="desc"><%= item.desc %></span>
+               
+                  <div class="list-category"><p id="printed-category"><%= item.category %></div>
+                  <div class="printed-date">
+                    <span>
+                      <i class="fa-solid fa-calendar-days"></i>&nbsp;&nbsp;
+                    </span>
+                     <span> <%= item.date %></span>
+                  </div>
+                  <div id="hor-border"></div>
+
+                </li>
+                
+              <% }) %>
+              
+            </ul>
+          </div>
+      </form>
+    </div>
+    
+    
+  <script src="/index.js"></script> 
+</body>
+</html>
